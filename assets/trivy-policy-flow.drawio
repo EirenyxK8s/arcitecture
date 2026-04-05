@@ -1,0 +1,131 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Trivy Policy Flow" id="trivy-policy-flow">
+    <mxGraphModel dx="1543" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-31" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;size=40;" value="&lt;b&gt;Platform Engineer&lt;/b&gt;" vertex="1">
+          <mxGeometry height="750" width="20" x="50" y="31" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-32" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="&lt;b&gt;K8s Control Plane&lt;/b&gt;" vertex="1">
+          <mxGeometry height="760" width="100" x="210" y="31" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-33" parent="mkjTPkbyg3-W0W9oe_Jg-32" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="45" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-34" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="&lt;b&gt;Eirenyx Operator&lt;/b&gt;" vertex="1">
+          <mxGeometry height="750" width="100" x="400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-35" parent="mkjTPkbyg3-W0W9oe_Jg-34" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="59" width="10" x="45" y="131" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-36" parent="mkjTPkbyg3-W0W9oe_Jg-34" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="49" width="10" x="45" y="241" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-37" edge="1" parent="mkjTPkbyg3-W0W9oe_Jg-34" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="mkjTPkbyg3-W0W9oe_Jg-36" value="prepare job based&amp;nbsp;&lt;div&gt;on the Trivy Spec&lt;/div&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="251" />
+            </Array>
+            <mxPoint x="50" y="221" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-38" parent="mkjTPkbyg3-W0W9oe_Jg-34" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="45" y="591" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-39" edge="1" parent="mkjTPkbyg3-W0W9oe_Jg-34" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="mkjTPkbyg3-W0W9oe_Jg-38" value="Create Policy Report">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="601" />
+            </Array>
+            <mxPoint x="50" y="571" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-40" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="&lt;b&gt;Trivy Operator&lt;/b&gt;" vertex="1">
+          <mxGeometry height="750" width="100" x="610" y="31" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-41" parent="mkjTPkbyg3-W0W9oe_Jg-40" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="45" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-42" edge="1" parent="mkjTPkbyg3-W0W9oe_Jg-40" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="mkjTPkbyg3-W0W9oe_Jg-41" value="creates Vulnerability Report">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="400" />
+            </Array>
+            <mxPoint x="50" y="370" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-43" edge="1" parent="1" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;curved=0;rounded=0;" target="mkjTPkbyg3-W0W9oe_Jg-32" value="create Eirenyx Policy (type: trivy)">
+          <mxGeometry relative="1" width="60" as="geometry">
+            <mxPoint x="60" y="131" as="sourcePoint" />
+            <mxPoint x="120" y="131" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-44" edge="1" parent="1" source="mkjTPkbyg3-W0W9oe_Jg-32" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;" target="mkjTPkbyg3-W0W9oe_Jg-35" value="trigger Policy Reconciliation">
+          <mxGeometry relative="1" x="-0.0075" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="375" y="166" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-45" edge="1" parent="1" source="mkjTPkbyg3-W0W9oe_Jg-35" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;" target="mkjTPkbyg3-W0W9oe_Jg-32" value="look for healty Trivy tool">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="375" y="236" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-46" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" value="create K8s Job to call Trivy">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="311" as="sourcePoint" />
+            <mxPoint x="259.4473684210525" y="311" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-47" edge="1" parent="1" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;curved=0;rounded=0;" target="mkjTPkbyg3-W0W9oe_Jg-40" value="trigger Trivy Scanning">
+          <mxGeometry relative="1" width="60" as="geometry">
+            <mxPoint x="260" y="361" as="sourcePoint" />
+            <mxPoint x="320" y="361" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-48" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=110;height=20;" value="monitoring stage" vertex="1">
+          <mxGeometry height="310" width="650" x="190" y="381" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-49" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" target="mkjTPkbyg3-W0W9oe_Jg-32" value="save Vulnerability Report">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="461" as="sourcePoint" />
+            <mxPoint x="580" y="461" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-50" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="80" width="10" x="255" y="491" as="geometry" />
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-51" edge="1" parent="1" source="mkjTPkbyg3-W0W9oe_Jg-34" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;" target="mkjTPkbyg3-W0W9oe_Jg-50" value="look for Vulnerability Report">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="335" y="496" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-52" edge="1" parent="1" source="mkjTPkbyg3-W0W9oe_Jg-50" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=-5;" target="mkjTPkbyg3-W0W9oe_Jg-34" value="return Vulnerability Report">
+          <mxGeometry relative="1" x="0.0041" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="335" y="566" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-53" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" target="mkjTPkbyg3-W0W9oe_Jg-32" value="save PolicyReport as CRD">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="661" as="sourcePoint" />
+            <mxPoint x="370" y="661" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-54" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;" target="mkjTPkbyg3-W0W9oe_Jg-33" value="get Trivy Policy Report">
+          <mxGeometry relative="1" x="0.004" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="60" y="716" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mkjTPkbyg3-W0W9oe_Jg-55" edge="1" parent="1" source="mkjTPkbyg3-W0W9oe_Jg-33" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;" target="mkjTPkbyg3-W0W9oe_Jg-31" value="return Trivy Policy Report">
+          <mxGeometry relative="1" x="0.0012" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="60" y="786" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

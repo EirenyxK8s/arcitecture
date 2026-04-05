@@ -1,0 +1,132 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Security Lifecycle" id="security-lifecycle">
+    <mxGraphModel dx="1234" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v45yfScEOpHiLrOrgPOx-9" edge="1" parent="1" source="tl-start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;" target="marker1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="131" />
+              <mxPoint x="146" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tl-start" parent="1" style="point;" value="" vertex="1">
+          <mxGeometry height="1" width="1" x="60" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tl-label" parent="1" style="text;html=1;fontStyle=1;fontSize=16;align=center;" value="&lt;font&gt;Application Deployment Lifecycle&lt;/font&gt;" vertex="1">
+          <mxGeometry height="25" width="370" x="460" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="v45yfScEOpHiLrOrgPOx-10" edge="1" parent="1" source="marker1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;" target="marker2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="marker1" parent="1" style="ellipse;html=1;fillColor=#333333;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="230" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="v45yfScEOpHiLrOrgPOx-11" edge="1" parent="1" source="marker2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;" target="marker3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="marker2" parent="1" style="ellipse;html=1;fillColor=#333333;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="637" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="marker1-label" parent="1" style="text;html=1;align=center;fontSize=16;verticalAlign=middle;" value="Workload&lt;div&gt;defined&lt;/div&gt;" vertex="1">
+          <mxGeometry height="45" width="250" x="113" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="marker2-label" parent="1" style="text;html=1;align=center;fontSize=16;verticalAlign=middle;" value="Workload&#xa;deployed" vertex="1">
+          <mxGeometry height="45" width="250" x="520" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="marker3-label" parent="1" style="text;html=1;align=center;fontSize=16;verticalAlign=middle;" value="Workload&#xa;running" vertex="1">
+          <mxGeometry height="45" width="250" x="920" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="v45yfScEOpHiLrOrgPOx-17" edge="1" parent="1" source="phase1-box" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" target="report-section">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1-box" parent="1" style="rounded=1;html=1;fillColor=#fff2cc;strokeColor=#d6b656;opacity=40;" value="" vertex="1">
+          <mxGeometry height="220" width="370" x="60" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="phase1-header" parent="1" style="text;html=1;fontStyle=1;fontSize=14;fillColor=#d6b656;strokeColor=#d6b656;rounded=1;align=center;" value="Phase 1: Pre-Runtime" vertex="1">
+          <mxGeometry height="30" width="250" x="120" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="trivy-card" parent="1" style="rounded=1;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="150" width="330" x="80" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="trivy-logo" parent="1" style="text;html=1;fontStyle=1;fontSize=20;fillColor=#d6b656;strokeColor=none;align=center;" value="TRIVY" vertex="1">
+          <mxGeometry height="40" width="150" x="170" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="trivy-role" parent="1" style="text;html=1;fontStyle=2;fontSize=11;align=center;" value="Vulnerability &amp; Configuration Scanner" vertex="1">
+          <mxGeometry height="20" width="330" x="80" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="trivy-eirenyx" parent="1" style="rounded=1;html=1;fillColor=#d6b656;strokeColor=none;fontSize=10;fontStyle=1;align=center;" value="Eirenyx: creates K8s Jobs, reads VulnerabilityReport CRDs" vertex="1">
+          <mxGeometry height="30" width="310" x="90" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="v45yfScEOpHiLrOrgPOx-15" edge="1" parent="1" source="phase2-box" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" target="report-section">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2-box" parent="1" style="rounded=1;html=1;fillColor=#f8cecc;strokeColor=#b85450;opacity=40;" value="" vertex="1">
+          <mxGeometry height="220" width="370" x="460" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="phase2-header" parent="1" style="text;html=1;fontStyle=1;fontSize=14;fillColor=#b85450;strokeColor=#b85450;rounded=1;fontColor=#ffffff;align=center;" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Phase 2: Runtime&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="250" x="520" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="falco-card" parent="1" style="rounded=1;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="" vertex="1">
+          <mxGeometry height="150" width="330" x="480" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="falco-logo" parent="1" style="text;html=1;fontStyle=1;fontSize=20;fillColor=#b85450;strokeColor=none;align=center;fontColor=#b85450;" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;FALCO&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="150" x="570" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="falco-role" parent="1" style="text;html=1;fontStyle=2;fontSize=11;align=center;" value="Runtime Security &amp; Behavioral Detection" vertex="1">
+          <mxGeometry height="20" width="330" x="480" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="falco-eirenyx" parent="1" style="rounded=1;html=1;fillColor=#b85450;strokeColor=none;fontSize=10;fontStyle=1;fontColor=#ffffff;align=center;" value="Eirenyx: creates ConfigMap with rules, aggregates Falco events" vertex="1">
+          <mxGeometry height="30" width="310" x="490" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="v45yfScEOpHiLrOrgPOx-14" edge="1" parent="1" source="phase3-box" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" target="report-section">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3-box" parent="1" style="rounded=1;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=40;" value="" vertex="1">
+          <mxGeometry height="220" width="370" x="860" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="phase3-header" parent="1" style="text;html=1;fontStyle=1;fontSize=14;fillColor=#82b366;strokeColor=#82b366;rounded=1;align=center;" value="Phase 3: Resilience" vertex="1">
+          <mxGeometry height="30" width="250" x="930" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="litmus-card" parent="1" style="rounded=1;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="150" width="330" x="875" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="litmus-logo" parent="1" style="text;html=1;fontStyle=1;fontSize=20;fillColor=#82b366;strokeColor=none;align=center;fontColor=#82b366;" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;LITMUS&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="150" x="970" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="litmus-role" parent="1" style="text;html=1;fontStyle=2;fontSize=11;align=center;" value="Chaos Engineering Framework" vertex="1">
+          <mxGeometry height="20" width="250" x="912" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="litmus-eirenyx" parent="1" style="rounded=1;html=1;fillColor=#82b366;strokeColor=none;fontSize=10;fontStyle=1;align=center;" value="Eirenyx: creates ChaosEngine CRDs, reads ChaosResult" vertex="1">
+          <mxGeometry height="30" width="310" x="885" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="report-section" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontStyle=1;fontSize=13;" value="Unified PolicyReport" vertex="1">
+          <mxGeometry height="160" width="560" x="365" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="report-inner" parent="1" style="text;html=1;fontSize=11;align=left;spacingLeft=10;" value="PolicyReport CRD — generated per policy per tool&lt;br&gt;&lt;br&gt;type: trivy | falco | litmus&lt;br&gt;policyRef: policy name + generation (reset on spec change)&lt;br&gt;&lt;br&gt;&lt;div&gt;phase:     Pending → Running → Completed&lt;br&gt;summary:   verdict(Pass|Fail), totalChecks, passed, failed&lt;br&gt;details:   tool-specific JSON (CVE list / event list / chaos outcome)&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="540" x="375" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="eirenyx-umbrella" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;dashed=1;" value="Eirenyx Operator — Unified Declarative Control Plane" vertex="1">
+          <mxGeometry height="50" width="200" x="110" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="e-umbrella-report" edge="1" parent="1" source="eirenyx-umbrella" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="report-section">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v45yfScEOpHiLrOrgPOx-7" edge="1" parent="1" source="marker3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;curved=0;strokeWidth=3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1070" y="130" as="sourcePoint" />
+            <mxPoint x="1240" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="marker3" parent="1" style="ellipse;html=1;fillColor=#333333;strokeColor=#333333;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="1037" y="122.5" as="geometry" />
+        </mxCell>
+        <mxCell id="v45yfScEOpHiLrOrgPOx-13" edge="1" parent="1" source="trivy-card" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="trivy-card">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

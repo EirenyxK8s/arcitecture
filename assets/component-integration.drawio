@@ -1,0 +1,202 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Component Integration" id="component-integration">
+    <mxGraphModel dx="2814" dy="1924" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="k8s-layer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;verticalAlign=top;fontStyle=1;fontSize=12;align=center;" value="Kubernetes Control Plane" vertex="1">
+          <mxGeometry height="870" width="1440" x="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-layer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;fontStyle=1;fontSize=12;align=center;" value="UI Layer (Angular 21)" vertex="1">
+          <mxGeometry height="160" width="580" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-service-tool" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;spacingLeft=8;fontSize=12;" value="ToolService" vertex="1">
+          <mxGeometry height="80" width="160" x="60" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-service-policy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;spacingLeft=8;fontSize=12;" value="PolicyService" vertex="1">
+          <mxGeometry height="80" width="160" x="240" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-service-report" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;spacingLeft=8;fontSize=12;" value="ReportService" vertex="1">
+          <mxGeometry height="80" width="160" x="420" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="api-layer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontStyle=1;fontSize=12;align=center;" value="API Layer&amp;nbsp;" vertex="1">
+          <mxGeometry height="300" width="580" x="30" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="api-ctrl-tool" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;spacingLeft=8;fontSize=12;" value="ToolController" vertex="1">
+          <mxGeometry height="80" width="160" x="60" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="api-ctrl-policy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;spacingLeft=8;fontSize=12;" value="PolicyController" vertex="1">
+          <mxGeometry height="80" width="160" x="240" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="F3PMEsC6SeeQ98fJPbaa-2" edge="1" parent="1" source="api-ctrl-report" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;align=center;" target="F3PMEsC6SeeQ98fJPbaa-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="api-ctrl-report" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;spacingLeft=8;fontSize=12;" value="ReportController" vertex="1">
+          <mxGeometry height="80" width="160" x="420" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="api-svc-tool" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;spacingLeft=8;fontSize=12;" value="ToolService" vertex="1">
+          <mxGeometry height="80" width="160" x="60" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="api-svc-policy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;spacingLeft=8;fontSize=12;" value="PolicyService" vertex="1">
+          <mxGeometry height="80" width="160" x="240" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="op-layer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontStyle=1;fontSize=12;align=center;" value="K8s Operator Layer" vertex="1">
+          <mxGeometry height="290" width="450" x="720" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="op-tool-ctrl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;spacingLeft=8;fontSize=12;" value="ToolReconciler" vertex="1">
+          <mxGeometry height="80" width="160" x="760" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gbBLZ_nnLJVj96dlgs9S-12" edge="1" parent="1" source="op-policy-ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" target="k8s-api-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="370" />
+              <mxPoint x="635" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="op-policy-ctrl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;spacingLeft=8;fontSize=12;" value="PolicyReconciler" vertex="1">
+          <mxGeometry height="80" width="160" x="760" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="op-trivy-engine" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;spacingLeft=8;fontSize=12;" value="Trivy Engine" vertex="1">
+          <mxGeometry height="80" width="120" x="890" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="gbBLZ_nnLJVj96dlgs9S-13" edge="1" parent="1" source="op-falco-engine" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="op-litmus-engine" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="op-falco-engine" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;spacingLeft=8;fontSize=12;" value="Falco Engine" vertex="1">
+          <mxGeometry height="80" width="120" x="890" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="op-litmus-engine" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;spacingLeft=8;fontSize=12;" value="Litmus Engine" vertex="1">
+          <mxGeometry height="80" width="120" x="890" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-api-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;align=center;" value="K8s API Server&#xa;(CRDs, Jobs, ConfigMaps)" vertex="1">
+          <mxGeometry height="100" width="1310" x="-20" y="727" as="geometry" />
+        </mxCell>
+        <mxCell id="helm-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;gradientColor=#B9E0A5;align=center;" value="Helm SDK&#xa;InstallOrUpgrade()" vertex="1">
+          <mxGeometry height="35" width="160" x="980" y="132.5" as="geometry" />
+        </mxCell>
+        <mxCell id="trivy-op-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=center;" value="trivy-operator&#xa;VulnerabilityReport CRDs" vertex="1">
+          <mxGeometry height="60" width="200" x="1070" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="falco-op-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=center;" value="Falco DaemonSet&#xa;runtime syscall monitoring" vertex="1">
+          <mxGeometry height="60" width="200" x="1070" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="litmus-op-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=center;" value="LitmusChaos Operator&#xa;ChaosResult CRDs" vertex="1">
+          <mxGeometry height="60" width="200" x="1070" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ui-tool" edge="1" parent="1" source="ui-service-tool" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;align=center;" target="api-ctrl-tool" value="/api/tools">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ui-policy" edge="1" parent="1" source="ui-service-policy" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;align=center;" target="api-ctrl-policy" value="/api/policies">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ui-report" edge="1" parent="1" source="ui-service-report" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;align=center;" target="api-ctrl-report" value="/api/reports">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-ctrl-svc-tool" edge="1" parent="1" source="api-ctrl-tool" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="api-svc-tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ctrl-svc-policy" edge="1" parent="1" source="api-ctrl-policy" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="api-svc-policy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-api-k8s-tool" edge="1" parent="1" source="api-svc-tool" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="k8s-api-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="135" y="650" />
+              <mxPoint x="635" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-api-k8s-policy" edge="1" parent="1" source="api-svc-policy" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="k8s-api-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="650" />
+              <mxPoint x="635" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-op-helm" edge="1" parent="1" source="op-tool-ctrl" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="helm-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-trivy-engine-out" edge="1" parent="1" source="op-trivy-engine" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="trivy-op-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-falco-engine-out" edge="1" parent="1" source="op-falco-engine" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="falco-op-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-litmus-engine-out" edge="1" parent="1" source="op-litmus-engine" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="litmus-op-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-policy-trivy" edge="1" parent="1" source="op-policy-ctrl" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="op-trivy-engine">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-policy-falco" edge="1" parent="1" source="op-policy-ctrl" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="op-falco-engine">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-policy-litmus" edge="1" parent="1" source="op-policy-ctrl" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="op-litmus-engine">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F3PMEsC6SeeQ98fJPbaa-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;spacingLeft=8;fontSize=12;" value="ReportService" vertex="1">
+          <mxGeometry height="80" width="160" x="420" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="F3PMEsC6SeeQ98fJPbaa-3" edge="1" parent="1" source="op-tool-ctrl" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;" target="op-policy-ctrl" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="845" y="210" as="sourcePoint" />
+            <mxPoint x="855" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gbBLZ_nnLJVj96dlgs9S-11" edge="1" parent="1" source="op-report-ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" target="k8s-api-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="370" />
+              <mxPoint x="635" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="op-report-ctrl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;spacingLeft=8;fontSize=12;" value="PolicyReportReconciler" vertex="1">
+          <mxGeometry height="80" width="160" x="980" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="gbBLZ_nnLJVj96dlgs9S-8" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="140" width="250" x="520" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="gbBLZ_nnLJVj96dlgs9S-1" parent="gbBLZ_nnLJVj96dlgs9S-8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;" value="External Access" vertex="1">
+          <mxGeometry height="140" width="250" as="geometry" />
+        </mxCell>
+        <mxCell id="gbBLZ_nnLJVj96dlgs9S-2" parent="gbBLZ_nnLJVj96dlgs9S-8" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" value="Browser&#xa;(Security Engineer)" vertex="1">
+          <mxGeometry height="50" width="50" x="40" y="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gbBLZ_nnLJVj96dlgs9S-3" parent="gbBLZ_nnLJVj96dlgs9S-8" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" value="kubectl&#xa;(Platform Ops)" vertex="1">
+          <mxGeometry height="50" width="50" x="170" y="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gbBLZ_nnLJVj96dlgs9S-9" edge="1" parent="1" source="gbBLZ_nnLJVj96dlgs9S-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.83;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" target="op-layer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="975" y="-108" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gbBLZ_nnLJVj96dlgs9S-10" edge="1" parent="1" source="gbBLZ_nnLJVj96dlgs9S-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.16;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" target="ui-layer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="-108" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -60,7 +60,8 @@ using declarative rule definitions.
 **Example:** Detect a container spawning a shell or attempting privilege escalation.
 
 > Note: Falco is chosen over admission-focused policy engines (e.g. OPA/Gatekeeper) deliberately. Admission controllers
-> validate what _may_ be deployed; Falco observes what _actually happens_ at runtime. For operational security monitoring,
+> validate what _may_ be deployed; Falco observes what _actually happens_ at runtime. For operational security
+> monitoring,
 > runtime detection provides stronger alignment with intrusion detection principles.
 
 ---
@@ -99,18 +100,18 @@ These tools cover complementary, non-overlapping phases of the security lifecycl
                         │                  K8s Cluster                     │
                         │                                                  │
                         │   ┌─────────────────┐                            │
-User ──CRUD CRDs──────▶ │   │ Eirenyx Operator │                           │
+User ──CRUD CRDs──────▶ │   │ Eirenyx Operator│                            │
                         │   └────────┬────────┘                            │
                         │            │                                     │
                         │     ┌──────┴───────┐                             │
-                        │     │ Eirenyx Policy│ (CRD)                      │
+                        │     │Eirenyx Policy│ (CRD)                       │
                         │     └──┬───┬───┬───┘                             │
                         │        │   │   │                                 │
                         │     ┌──▼─┐ ┌▼──┐ ┌──▼──┐                         │
                         │     │Lit-│ │Tri│ │Falco│  (managed tools)        │
                         │     │mus │ │vy │ │     │                         │
                         │     └──┬─┘ └─┬─┘ └──┬──┘                         │
-                        │        │     │       │                           │
+                        │        │     │      │                            │
                         │  ┌─────▼┐ ┌──▼──┐ ┌─▼──────┐                     │
                         │  │Litmus│ │Trivy│ │ Falco  │  (reports)          │
                         │  │Report│ │Reprt│ │ Report │                     │

@@ -1,0 +1,125 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Falco Policy Flow" id="falco-policy-flow">
+    <mxGraphModel dx="1898" dy="1266" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;fontStyle=1;size=40;" value="&lt;span style=&quot;text-wrap-mode: nowrap;&quot;&gt;Platform Engineer&lt;/span&gt;" vertex="1">
+          <mxGeometry height="640" width="20" x="80" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fontStyle=1" value="K8s Control plane" vertex="1">
+          <mxGeometry height="640" width="100" x="290" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-21" parent="er-xixa5FiyCqN5-ZGBm-2" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="45" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-27" parent="er-xixa5FiyCqN5-ZGBm-2" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="45" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-3" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fontStyle=1" value="Eirenyx Operator" vertex="1">
+          <mxGeometry height="640" width="100" x="500" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-7" parent="er-xixa5FiyCqN5-ZGBm-3" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="60" width="10" x="45" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-11" parent="er-xixa5FiyCqN5-ZGBm-3" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="45" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-12" edge="1" parent="er-xixa5FiyCqN5-ZGBm-3" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="er-xixa5FiyCqN5-ZGBm-11" value="&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;prepare Falco Rule&lt;/span&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="220" />
+            </Array>
+            <mxPoint x="50" y="190" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-24" parent="er-xixa5FiyCqN5-ZGBm-3" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="45" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-25" edge="1" parent="er-xixa5FiyCqN5-ZGBm-3" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="er-xixa5FiyCqN5-ZGBm-24" value="Create PolicyReport">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="470" />
+            </Array>
+            <mxPoint x="50" y="440" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-4" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fontStyle=1" value="Falco Operator" vertex="1">
+          <mxGeometry height="640" width="100" x="710" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-16" parent="er-xixa5FiyCqN5-ZGBm-4" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="46" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-17" edge="1" parent="er-xixa5FiyCqN5-ZGBm-4" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="er-xixa5FiyCqN5-ZGBm-16" value="triggers for Falco Event">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="81" y="310" />
+            </Array>
+            <mxPoint x="51" y="280" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-5" edge="1" parent="1" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;curved=0;rounded=0;" value="create Eirenyx Policy (type: falco)">
+          <mxGeometry relative="1" width="60" as="geometry">
+            <mxPoint x="89.5" y="119" as="sourcePoint" />
+            <mxPoint x="339.5" y="119" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-6" edge="1" parent="1" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;curved=0;rounded=0;" target="er-xixa5FiyCqN5-ZGBm-3" value="trigger Policy Reconciliation">
+          <mxGeometry relative="1" width="60" as="geometry">
+            <mxPoint x="340" y="160" as="sourcePoint" />
+            <mxPoint x="400" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-8" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" target="er-xixa5FiyCqN5-ZGBm-2" value="look for healty Falco tool">
+          <mxGeometry relative="1" x="-0.0024" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="550" y="200" as="sourcePoint" />
+            <mxPoint x="470" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-13" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" target="er-xixa5FiyCqN5-ZGBm-2" value="create custom Falco rule in ConfigMap">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="280" as="sourcePoint" />
+            <mxPoint x="470" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-15" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=120;height=20;" value="monitoring stage" vertex="1">
+          <mxGeometry height="255" width="570" x="260" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-20" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" target="er-xixa5FiyCqN5-ZGBm-2" value="create Kubernetes Event for the respective Rule">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="370" as="sourcePoint" />
+            <mxPoint x="680" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-22" edge="1" parent="1" source="er-xixa5FiyCqN5-ZGBm-3" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;" target="er-xixa5FiyCqN5-ZGBm-21" value="look for desired Falco Events">
+          <mxGeometry relative="1" x="-0.0024" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="420" y="405" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-23" edge="1" parent="1" source="er-xixa5FiyCqN5-ZGBm-21" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=-5;" target="er-xixa5FiyCqN5-ZGBm-3" value="return events">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-26" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" target="er-xixa5FiyCqN5-ZGBm-2" value="save PolicyReport as CRD">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="530" as="sourcePoint" />
+            <mxPoint x="470" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-28" edge="1" parent="1" source="er-xixa5FiyCqN5-ZGBm-1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;" target="er-xixa5FiyCqN5-ZGBm-27" value="get Falco Policy Report">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="265" y="585" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="er-xixa5FiyCqN5-ZGBm-29" edge="1" parent="1" source="er-xixa5FiyCqN5-ZGBm-27" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;" target="er-xixa5FiyCqN5-ZGBm-1" value="return Falco Policy Report">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="265" y="655" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

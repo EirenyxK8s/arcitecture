@@ -111,9 +111,9 @@ so that I can configure Trivy, Falco, and Litmus through one interface.
 1. Generate Policy API
 2. Define PolicySpec sections:
 
-   * trivy
-   * falco
-   * litmus
+    * trivy
+    * falco
+    * litmus
 3. Reference required tools
 4. Add validation rules
 
@@ -135,10 +135,9 @@ so that security and resilience checks run automatically.
 1. Implement `PolicyReconciler`
 2. Verify referenced Tool health
 3. Trigger:
-
-   * Trivy scans
-   * Falco rule activation / event subscription
-   * Litmus chaos experiments
+    * Trivy scans
+    * Falco rule activation / event subscription
+    * Litmus chaos experiments
 4. Track execution state
 
 #### Done when
@@ -181,10 +180,9 @@ so that real risks are prioritized.
 
 1. Define correlation rules
 2. Combine:
-
-   * vulnerabilities
-   * runtime alerts
-   * resilience failures
+    * vulnerabilities
+    * runtime alerts
+    * resilience failures
 3. Assign severity
 
 #### Done when
@@ -223,7 +221,6 @@ so that cluster state is easy to assess.
 * Idempotent reconciliation
 * Declarative over imperative
 * Clear separation of:
-
-  * Tool lifecycle
-  * Policy behavior
-  * Reporting
+    * Tool lifecycle
+    * Policy behavior
+    * Reporting

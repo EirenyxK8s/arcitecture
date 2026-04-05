@@ -1,0 +1,131 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Tool Lifecycle Flow" id="tool-lifecycle-flow">
+    <mxGraphModel dx="1371" dy="914" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Tool CR Created / Updated" vertex="1">
+          <mxGeometry height="50" width="200" x="460" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="finalizer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Add Finalizer&#xa;(if not present)" vertex="1">
+          <mxGeometry height="50" width="200" x="460" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="deletion-check" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Marked for&#xa;Deletion?" vertex="1">
+          <mxGeometry height="70" width="160" x="480" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="cleanup" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="EnsureUninstalled()&#xa;Helm uninstall + NS cleanup" vertex="1">
+          <mxGeometry height="50" width="200" x="720" y="262" as="geometry" />
+        </mxCell>
+        <mxCell id="remove-finalizer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Remove Finalizer" vertex="1">
+          <mxGeometry height="50" width="200" x="720" y="352" as="geometry" />
+        </mxCell>
+        <mxCell id="end-deleted" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Object Deleted" vertex="1">
+          <mxGeometry height="50" width="150" x="745" y="442" as="geometry" />
+        </mxCell>
+        <mxCell id="enabled-check" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="spec.enabled&#xa;== true?" vertex="1">
+          <mxGeometry height="70" width="160" x="480" y="343.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ensure-uninstalled" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Helm uninstall" vertex="1">
+          <mxGeometry height="50" width="200" x="210" y="353.5" as="geometry" />
+        </mxCell>
+        <mxCell id="status-disabled" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Update Status&#xa;installed=false, healthy=false" vertex="1">
+          <mxGeometry height="50" width="200" x="210" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="ensure-installed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Helm Install оr upgrade" vertex="1">
+          <mxGeometry height="50" width="200" x="460" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="helm-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;" value="helm.Manager&lt;br&gt;&lt;br&gt;• Add chart repo&lt;br&gt;• helm install / upgrade&lt;br&gt;• Wait for ready (5m timeout)" vertex="1">
+          <mxGeometry height="90" width="230" x="730" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="health-check" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="CheckHealth()&#xa;Deployment / DaemonSet ready?" vertex="1">
+          <mxGeometry height="50" width="200" x="460" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="health-type-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="Trivy / Litmus → IsDeploymentReady()&#xa;Falco → IsDaemonSetReady()" vertex="1">
+          <mxGeometry height="46" width="230" x="730" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="healthy-check" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Healthy?" vertex="1">
+          <mxGeometry height="70" width="140" x="490" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="requeue" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Requeue after 5s" vertex="1">
+          <mxGeometry height="50" width="160" x="250" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="update-status" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Update Tool Status&#xa;installed=true, healthy=true&#xa;version=chart.version" vertex="1">
+          <mxGeometry height="60" width="200" x="460" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="done" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Reconcile Complete" vertex="1">
+          <mxGeometry height="50" width="160" x="480" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;" target="finalizer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="finalizer" style="edgeStyle=orthogonalEdgeStyle;" target="deletion-check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="deletion-check" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="cleanup" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="cleanup" style="edgeStyle=orthogonalEdgeStyle;" target="remove-finalizer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="remove-finalizer" style="edgeStyle=orthogonalEdgeStyle;" target="end-deleted">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="deletion-check" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="enabled-check" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="enabled-check" style="edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="ensure-uninstalled" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="ensure-uninstalled" style="edgeStyle=orthogonalEdgeStyle;" target="status-disabled">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="enabled-check" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="ensure-installed" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="ensure-installed" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" target="helm-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="ensure-installed" style="edgeStyle=orthogonalEdgeStyle;" target="health-check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="health-check" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" target="health-type-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="health-check" style="edgeStyle=orthogonalEdgeStyle;" target="healthy-check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="healthy-check" style="edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="requeue" value="No">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="healthy-check" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="update-status" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="update-status" style="edgeStyle=orthogonalEdgeStyle;" target="done">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" parent="1" style="text;html=1;fontStyle=1;fontSize=12;" value="Legend" vertex="1">
+          <mxGeometry height="30" width="100" x="10" y="577" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Reconcile step" vertex="1">
+          <mxGeometry height="30" width="140" x="10" y="617" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Success path" vertex="1">
+          <mxGeometry height="30" width="140" x="10" y="657" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Cleanup / disabled path" vertex="1">
+          <mxGeometry height="30" width="140" x="10" y="697" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Decision" vertex="1">
+          <mxGeometry height="50" width="140" x="10" y="737" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Detail / annotation" vertex="1">
+          <mxGeometry height="30" width="140" x="10" y="797" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
