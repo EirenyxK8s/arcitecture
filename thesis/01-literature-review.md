@@ -2,9 +2,9 @@
 
 ---
 
-## 1.1 Kubernetes and the Operator Model
+## 1 Kubernetes and the Operator Model
 
-### 1.1.1 Kubernetes — Architecture and Core Principles
+### 1.1 Kubernetes — Architecture and Core Principles
 
 Kubernetes [1] is an open-source container orchestration system originally developed by Google and donated to the Cloud
 Native Computing Foundation (CNCF) in 2016. It draws directly from Google's internal cluster management system,
@@ -43,7 +43,7 @@ Kubernetes ships with a suite of built-in controllers — the `DeploymentControl
 `ServiceController`, `NodeController`, and others — each responsible for a specific resource type. These built-in
 controllers handle the most common infrastructure concerns but are not extensible to application-specific domain logic.
 
-### 1.1.2 Custom Resource Definitions and the Extension API
+### 1.2 Custom Resource Definitions and the Extension API
 
 Kubernetes' extensibility mechanism is the **Custom Resource Definition (CRD)** [3]. A CRD is a schema definition
 registered with the API server that declares a new resource type with its own group, version, and kind. Once registered,
@@ -73,7 +73,7 @@ by users) from `status` (observed state, written by controllers) into distinct A
 concurrent writes from users and controllers do not overwrite each other. A user applying a new spec update cannot
 accidentally clear status fields written by the controller, and vice versa.
 
-### 1.1.3 The Operator Pattern
+### 1.3 The Operator Pattern
 
 The Operator pattern, first formalised by CoreOS in 2016 [4], combines a CRD with a custom controller into a unit that
 encodes **operational domain knowledge**. The term "operator" is deliberately anthropomorphic: just as a human operator
@@ -102,7 +102,7 @@ Framework [9], which grades operators on five levels from basic installation (Le
 full lifecycle management, deep insights, and autopilot (Level 5). Eirenyx targets Level 3 — full lifecycle management —
 by implementing install, upgrade, health monitoring, and clean deletion for each managed tool.
 
-### 1.1.4 Kubebuilder and controller-runtime
+### 1.4 Kubebuilder and controller-runtime
 
 **Kubebuilder** [10] is the standard framework for building Kubernetes operators in Go, maintained by the Kubernetes SIG
 API Machinery. It provides:
@@ -130,9 +130,9 @@ API Machinery. It provides:
 
 ---
 
-## 1.2 Container Security — The Threat Landscape and Tooling Challenges
+## 2 Container Security — The Threat Landscape and Tooling Challenges
 
-### 1.2.1 The Container Security Problem Space
+### 2.1 The Container Security Problem Space
 
 The shift to containerised, cloud-native workloads introduces a substantially different security threat landscape
 compared to traditional virtual machine deployments. In a VM-based environment, the boundary between workloads is
@@ -176,7 +176,7 @@ separate concerns — a system that cannot recover from failures is vulnerable t
 operational failures that have security consequences (e.g. authentication service downtime allowing bypass of access
 controls).
 
-### 1.2.2 The Operational Fragmentation Problem
+### 2.2 The Operational Fragmentation Problem
 
 The security tooling ecosystem for Kubernetes has evolved rapidly, producing capable tools for each of the three phases
 described above. The challenge is not a lack of tools — it is that these tools have evolved independently, each with its
@@ -203,7 +203,7 @@ security tooling complexity and integration overhead" as a primary barrier to co
 environments. Surveyed organisations report that security tooling is the second most frequently cited source of
 operational toil in cloud-native environments, behind only observability.
 
-### 1.2.3 Existing Integration Approaches and Their Limitations
+### 2.3 Existing Integration Approaches and Their Limitations
 
 Several commercial and open-source platforms have attempted to address the integration problem:
 
@@ -232,9 +232,9 @@ and unified reporting — without replacing the underlying tools or requiring pr
 
 ---
 
-## 1.3 Trivy — Vulnerability and Misconfiguration Scanning
+## 3 Trivy — Vulnerability and Misconfiguration Scanning
 
-### 1.3.1 Purpose and Scope
+### 3.1 Purpose and Scope
 
 Trivy [19] is an open-source, all-in-one vulnerability and misconfiguration scanner developed by Aqua Security and
 released in 2019. It addresses the pre-deployment security phase by answering the question: *what known risks are
@@ -254,7 +254,7 @@ Advisories, and vendor-specific sources) and correlates it against package metad
 The correlation covers OS package managers (apt/dpkg, apk, rpm/yum/dnf) and language-specific package managers (
 npm/yarn, pip/poetry, cargo, go modules, maven/gradle, composer, gem).
 
-### 1.3.2 How Trivy Works — Technical Architecture
+### 3.2 How Trivy Works — Technical Architecture
 
 Trivy's scanning pipeline consists of four stages:
 
@@ -274,7 +274,7 @@ containers running as root, missing resource limits, privileged containers, host
 **4. Result aggregation and output**: Results are aggregated, deduplicated, and serialised in the requested output
 format (JSON, SARIF, table, HTML, CycloneDX SBOM).
 
-### 1.3.3 The trivy-operator
+### 3.3 The trivy-operator
 
 The **trivy-operator** [8] is a Kubernetes operator that automates Trivy scanning within a cluster. Rather than running
 Trivy as a CLI tool in CI pipelines (which only captures a snapshot at build time), the trivy-operator continuously
@@ -289,7 +289,7 @@ monitors the cluster and scans every container image that is running. It achieve
 The `VulnerabilityReport` CRD provides a structured, queryable representation of the scan results that persists in etcd
 alongside the workload it describes. This is the interface that Eirenyx's `TrivyReportHandler` consumes.
 
-### 1.3.4 The CVSS Severity Model
+### 3.4 The CVSS Severity Model
 
 Trivy classifies vulnerabilities using the **Common Vulnerability Scoring System (CVSS)** [20], a standardised framework
 for rating the severity of security vulnerabilities. CVSS v3 scores range from 0 to 10 and map to five severity levels:
@@ -309,9 +309,9 @@ platform engineers.
 
 ---
 
-## 1.4 Falco — Runtime Security and Anomaly Detection
+## 4 Falco — Runtime Security and Anomaly Detection
 
-### 1.4.1 Purpose and the Limits of Admission Control
+### 4.1 Purpose and the Limits of Admission Control
 
 Falco [21] is a cloud-native runtime security project originally developed by Sysdig in 2016 and donated to the CNCF in
 2018, achieving graduated project status in 2020. It addresses the runtime security phase by answering the question: *is
@@ -339,7 +339,7 @@ All of these behaviours are undetectable by any admission-time policy engine bec
 been admitted. Runtime security requires a different approach: continuous observation of what containers are actually
 doing.
 
-### 1.4.2 How Falco Works — Kernel-Level Observation
+### 4.2 How Falco Works — Kernel-Level Observation
 
 Falco operates by intercepting **system calls** (syscalls) — the interface through which all processes, including
 containerised ones, request services from the Linux kernel. Every process-level action that has security relevance
@@ -363,7 +363,7 @@ In both cases, Falco runs as a DaemonSet — one pod per node — ensuring that 
 The collected syscall events are enriched with Kubernetes metadata (pod name, namespace, container image, labels) by
 querying the Kubernetes API, then passed through the rules engine.
 
-### 1.4.3 The Falco Rules Engine
+### 4.3 The Falco Rules Engine
 
 Falco's rules are expressed in a YAML-based domain-specific language. A rule consists of:
 
@@ -402,7 +402,7 @@ extend this ruleset with custom rules or override default rules using append/ove
 `FalcoEngine` serialises the policy's `spec.falco` object into a ConfigMap that Falco mounts as an additional rules
 file, allowing new rules to take effect without restarting the DaemonSet.
 
-### 1.4.4 Falco Alerting and Output
+### 4.4 Falco Alerting and Output
 
 When a rule fires, Falco emits a structured alert containing the rule name, priority, output message, and all relevant
 event fields. Alerts can be routed to multiple outputs simultaneously: stdout (for log aggregation), gRPC (for
@@ -414,9 +414,9 @@ the rule fired — meaning the observed anomalous behaviour occurred — and the
 
 ---
 
-## 1.5 LitmusChaos — Chaos Engineering and Resilience Validation
+## 5 LitmusChaos — Chaos Engineering and Resilience Validation
 
-### 1.5.1 The Chaos Engineering Discipline
+### 5.1 The Chaos Engineering Discipline
 
 Chaos engineering is the practice of deliberately injecting controlled failures into a system to build confidence in its
 ability to withstand turbulent conditions in production. The discipline was pioneered by Netflix through their Chaos
@@ -440,7 +440,7 @@ which should be handled by Kubernetes' self-healing mechanisms), an attacker can
 purposes — bypassing authentication services, disrupting audit logging, or creating race conditions in security-critical
 code paths.
 
-### 1.5.2 LitmusChaos — Architecture and CRD Model
+### 5.2 LitmusChaos — Architecture and CRD Model
 
 LitmusChaos [24] is a CNCF incubating project that implements chaos engineering natively for Kubernetes. Unlike earlier
 chaos tools (Chaos Monkey, Gremlin) which operated at the infrastructure layer, Litmus models chaos experiments as
@@ -476,7 +476,7 @@ the experiment against the target workload.
 **ChaosResult**: the output resource that the chaos runner creates upon completion. It records the experiment outcome, a
 Pass/Fail verdict, and execution metadata (start time, end time, probe results).
 
-### 1.5.3 How Litmus Integrates with Eirenyx
+### 5.3 How Litmus Integrates with Eirenyx
 
 In Eirenyx, the `LitmusEngine` creates one `ChaosEngine` CRD per experiment defined in a `Policy`'s
 `spec.litmus.experiments` list. The `LitmusReportHandler` reads the experiment configuration to produce a `PolicyReport`
@@ -486,13 +486,13 @@ encodes the desired experiments, and the operator manages the `ChaosEngine` life
 
 ---
 
-## 1.6 How the Three Tools Work Together
+## 6 How the Three Tools Work Together
 
 The three tools described above — Trivy, Falco, and Litmus — address the Kubernetes security lifecycle at three
 orthogonal layers. No single tool can substitute for another, and the value of each is maximised when they operate in
 combination.
 
-### 1.6.1 Complementary Coverage Model
+### 6.1 Complementary Coverage Model
 
 The relationship between the tools can be understood through a temporal model of a workload's lifecycle:
 
@@ -518,7 +518,7 @@ from failures?" This is orthogonal to both Trivy and Falco: a workload could hav
 syscalls, yet fail catastrophically when its database connection is dropped — leaving it in a state where security
 controls (authentication, audit logging, access control enforcement) are unavailable.
 
-### 1.6.2 The Integration Gap
+### 6.2 The Integration Gap
 
 Despite their complementarity, the three tools have no native integration with each other. They speak different
 languages, produce different data formats, and require different operational procedures. A platform engineer who wants
@@ -539,9 +539,9 @@ an attacker). Each signal individually is below the response threshold; together
 
 ---
 
-## 1.7 Justification for a Unified Approach
+## 7 Justification for a Unified Approach
 
-### 1.7.1 The Case for a Control Plane
+### 7.1 The Case for a Control Plane
 
 The operational fragmentation described above is not a property of the individual tools — Trivy, Falco, and Litmus are
 each well-designed for their purpose. The fragmentation is a property of the *ecosystem*: tools built independently, for
@@ -559,7 +559,7 @@ heterogeneous tooling. An operator can:
 - Manage the full lifecycle (install, upgrade, health monitoring, deletion) of each tool, enforcing consistency and
   reducing operational toil.
 
-### 1.7.2 Requirements for an Effective Solution
+### 7.2 Requirements for an Effective Solution
 
 Based on the analysis of the problem space, an effective unified security operator must meet the following requirements:
 
@@ -581,7 +581,7 @@ no configuration files on disk, no in-memory state that is not recoverable from 
 **R6 — GitOps compatibility**: all configuration must be expressible as declarative YAML manifests that can be managed
 in a Git repository and applied via GitOps tooling (Flux, ArgoCD).
 
-### 1.7.3 Eirenyx as a Solution
+### 7.3 Eirenyx as a Solution
 
 Eirenyx satisfies all six requirements through a three-tier architecture:
 
