@@ -383,6 +383,3 @@ different errors had different shapes, each component would need to implement it
 ![Figure 8 — Component Integration and Interface Map](../assets/component-integration.drawio.png)
 
 ---
-
-*Previous: [Chapter 3D — Litmus Integration](03d-litmus.md)*
-*Next: [Chapter 3F — Web Dashboard](03f-ui.md)*
